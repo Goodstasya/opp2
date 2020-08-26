@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Radio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">3.1_oop2</a> &gt; <a href="index.source.html" class="el_package">ru.netology</a> &gt; <span class="el_source">Radio.java</span></div><h1>Radio.java</h1><pre class="source lang-java linenums">package ru.netology;
+
+<span class="fc" id="L3">public class Radio {</span>
+    private int minChannelNum;
+    private int maxChannelNum;
+    private int curChannelNum;
+    private int minVolume;
+    private int maxVolume;
+    private int curVolume;
+
+    public int getCurChannelNum() {
+<span class="fc" id="L12">        return curChannelNum;</span>
+    }
+
+    public int getCurVolume() {
+<span class="fc" id="L16">        return curVolume;</span>
+    }
+
+    public int getMaxChannelNum() {
+<span class="fc" id="L20">        return maxChannelNum;</span>
+    }
+
+    public int getMaxVolume() {
+<span class="fc" id="L24">        return maxVolume;</span>
+    }
+
+    public int getMinChannelNum() {
+<span class="fc" id="L28">        return minChannelNum;</span>
+    }
+
+    public int getMinVolume() {
+<span class="fc" id="L32">        return minVolume;</span>
+    }
+
+    public void setCurChannelNum(int curChannelNum) {
+<span class="fc bfc" id="L36" title="All 4 branches covered.">        if ((curChannelNum &gt;= this.getMinChannelNum()) &amp;&amp; (curChannelNum &lt;= this.getMaxChannelNum()))</span>
+<span class="fc" id="L37">            this.curChannelNum = curChannelNum;</span>
+<span class="fc" id="L38">    }</span>
+
+    public void setCurVolume(int curVolume) {
+<span class="fc bfc" id="L41" title="All 4 branches covered.">        if ((curVolume &gt;= this.getMinVolume()) &amp;&amp; curVolume &lt;= this.getMaxVolume())</span>
+<span class="fc" id="L42">            this.curVolume = curVolume;</span>
+<span class="fc" id="L43">    }</span>
+
+    public void setMaxChannelNum(int maxChannelNum) {
+<span class="fc" id="L46">        this.maxChannelNum = maxChannelNum;</span>
+<span class="fc" id="L47">    }</span>
+
+    public void setMaxVolume(int maxVolume) {
+<span class="fc" id="L50">        this.maxVolume = maxVolume;</span>
+<span class="fc" id="L51">    }</span>
+
+    public void setMinChannelNum(int minChannelNum) {
+<span class="fc" id="L54">        this.minChannelNum = minChannelNum;</span>
+<span class="fc" id="L55">    }</span>
+
+    public void setMinVolume(int minVolume) {
+<span class="fc" id="L58">        this.minVolume = minVolume;</span>
+<span class="fc" id="L59">    }</span>
+
+    public void increaseVolume() {
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (this.getCurVolume() &lt; this.getMaxVolume())</span>
+<span class="fc" id="L63">            this.setCurVolume(this.curVolume + 1);</span>
+<span class="fc" id="L64">    }</span>
+
+    public void decreaseVolume() {
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (this.getCurVolume() &gt; this.getMinVolume())</span>
+<span class="fc" id="L68">            this.setCurVolume(this.curVolume - 1);</span>
+<span class="fc" id="L69">    }</span>
+
+    public void increaseChannelNum() {
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if (this.getCurChannelNum() == this.getMaxChannelNum())</span>
+<span class="fc" id="L73">            this.setCurChannelNum(this.getMinChannelNum());</span>
+        else
+<span class="fc" id="L75">            this.setCurChannelNum(this.curChannelNum + 1);</span>
+<span class="fc" id="L76">    }</span>
+
+    public void decreaseChannelNum() {
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (this.getCurChannelNum() == this.getMinChannelNum())</span>
+<span class="fc" id="L80">            this.setCurChannelNum(this.getMaxChannelNum());</span>
+        else
+<span class="fc" id="L82">            this.setCurChannelNum(this.curChannelNum - 1);</span>
+<span class="fc" id="L83">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
